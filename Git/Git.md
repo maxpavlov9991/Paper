@@ -2,17 +2,17 @@
 
 ## Настройки
 
-- `git config --global user.name "Your Name"`
+- **`git config --global user.name "Your Name"`**
     - имя пользователя
 
-- `git config --global user.email "email@gmail.com"`
+- **`git config --global user.email "email@gmail.com"`**
     - электронный адрес
 
 ---
 
 ## Просмотр изменений
 
-- git `status`
+- `git status`
     - показать состояние репозитория (отслеживаемые, изменённые, новые файлы и т.д.)
 
 ---
