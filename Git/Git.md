@@ -1,4 +1,4 @@
-# Git / [Git(zsh)](./GitZSH)
+# Git / [Git(zsh)](./GitZSH.md)
 
 ## Настройки
 
