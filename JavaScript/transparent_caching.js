@@ -1,16 +1,22 @@
-function cachingDecorator(func) {
-    let cache = new Map();
-  
-    return function(x) {
-      if (cache.has(x)) {    // if there's such key in cache
-        return cache.get(x); // read the result from it
-      }
-  
-      let result = func(x);  // otherwise call func
-  
-      cache.set(x, result);  // and cache (remember) the result
-      return result;
-    };
+function cachingDecorator(func, hash) {
+  let cache = new Map();
+  return function() {
+    let key = hash(arguments);
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+
+    // .call for using object methods
+    let result = func.call(this, ...arguments);
+
+    cache.set(key, result);
+    return result;
+  };
 }
 
-func = cachingDecorator(func);
+// for multiple arguments
+function hash(args) {
+  return args[0] + ',' + args[1];
+}
+
+someObj.someHeavyFunc = cachingDecorator(someObj.someHeavyFunc, hash);

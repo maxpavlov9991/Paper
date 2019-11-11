@@ -1,3 +1,6 @@
 # JavaScript
 
-[Transparent caching](./transparent_caching.js)
+### [Transparent caching](./transparent_caching.js)
+Позволяет захешировать результат выполнения "тяжёлой" функции, возвращающей стабильный результат при одних и тех же входных данных, для оптимизации последующего вызова.
+
+---
