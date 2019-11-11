@@ -15,8 +15,8 @@ function cachingDecorator(func, hash) {
 }
 
 // for multiple arguments
-function hash(args) {
-  return args[0] + ',' + args[1];
+function hash() {
+  return [].join.call(arguments);
 }
 
 someObj.someHeavyFunc = cachingDecorator(someObj.someHeavyFunc, hash);
